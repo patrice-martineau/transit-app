@@ -1,0 +1,37 @@
+<mat-card class='form-container'>
+  <mat-form-field>
+    <mat-label>Select Route</mat-label>
+    <mat-select
+      [(value)]="selectedRoute"
+      (selectionChange)="changedRouteSelection($event)"
+    >
+      <mat-option *ngFor="let route of routes" [value]="route.route_id">
+        {{ route.route_label }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field *ngIf="selectedRoute">
+    <mat-label>Select Direction</mat-label>
+    <mat-select
+      [(value)]="selectedDirection"
+      (selectionChange)="changedDirectionSelection($event)"
+    >
+      <mat-option
+        *ngFor="let direction of directions"
+        [value]="direction.direction_id"
+      >
+        {{ direction.direction_name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field *ngIf="selectedDirection != null">
+    <mat-label>Select Stop</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let stop of stops" [value]="stop.place_code">
+        {{ stop.description }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-card>

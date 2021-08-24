@@ -5,18 +5,19 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './shared/material.module';
+import { RouteSelectorComponent } from './components/route-selector/route-selector.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent, RouteSelectorComponent],
   imports: [
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
-    MaterialModule
+	HttpClientModule,
+    MaterialModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
