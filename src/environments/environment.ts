@@ -4,7 +4,7 @@
 
 export const environment = {
 	production: false,
-	apiUrl: 'https://svc.metrotransit.org/NexTripv2',
+	apiUrl: 'https://svc.metrotransit.org/NexTripv2/',
 };
 
 /*

@@ -13,8 +13,10 @@ export class RouteSelectorComponent implements OnInit {
   public routes: any;
   public directions: any;
   public stops: any;
+  public departures: any;
   public selectedRoute: string;
   public selectedDirection: string;
+  public selectedStop: string;
 
   constructor(private routeSelectorService: RouteSelectorService) { }
 
@@ -42,6 +44,16 @@ export class RouteSelectorComponent implements OnInit {
       this.routeSelectorService.getStops(this.selectedRoute, val.value)
       .subscribe(v => {
         this.stops = v
+        return;
+      });
+  }
+
+  changedStopSelection(val: any) {
+    console.log("changed stop selection", val.value);
+      this.routeSelectorService.getDepartures(this.selectedRoute, this.selectedDirection, val.value)
+      .subscribe(v => {
+        this.departures = v
+        console.log(v)
         return;
       });
   }
