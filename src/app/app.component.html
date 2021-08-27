@@ -1,28 +1,4 @@
-<mat-toolbar>
-	<img src="https://www.metrotransit.org/img/MetroTransitLogo.svg">
-	<span class="example-spacer"></span>
-	<button
-	  mat-icon-button
-	  class="example-icon"
-	  aria-label="Example icon-button with menu icon"
-	>
-	  <mat-icon>menu</mat-icon>
-	</button>
-  <button
-    mat-icon-button
-    class="example-icon favorite-icon"
-    aria-label="Example icon-button with heart icon"
-  >
-    <mat-icon>favorite</mat-icon>
-  </button>
-  <button
-    mat-icon-button
-    class="example-icon"
-    aria-label="Example icon-button with share icon"
-  >
-    <mat-icon>share</mat-icon>
-  </button>
-</mat-toolbar>
+<app-toolbar></app-toolbar>
 
 <app-route-selector (departuresOut)=routeSelectorOut($event)></app-route-selector>
 <app-transit-info-graph *ngIf="appComponentDepartures" [departures]=appComponentDepartures.departures></app-transit-info-graph>
