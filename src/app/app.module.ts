@@ -9,9 +9,10 @@ import { RouteSelectorComponent } from './components/route-selector/route-select
 import { HttpClientModule } from '@angular/common/http';
 import { TransitInfoGraphComponent } from './components/transit-info-graph/transit-info-graph.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { ContainerComponent } from './components/container/container.component';
 
 @NgModule({
-  declarations: [AppComponent, RouteSelectorComponent, TransitInfoGraphComponent, ToolbarComponent],
+  declarations: [AppComponent, RouteSelectorComponent, TransitInfoGraphComponent, ToolbarComponent, ContainerComponent],
   imports: [
     AppRoutingModule,
     BrowserAnimationsModule,

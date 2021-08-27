@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Inject, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { RouteSelectorService } from 'src/app/shared/services/route-selector.service';
 
@@ -21,7 +22,10 @@ export class RouteSelectorComponent implements OnInit {
   @Output()
   departuresOut = new EventEmitter;
 
-  constructor(private routeSelectorService: RouteSelectorService) { }
+  constructor(
+    private routeSelectorService: RouteSelectorService,
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
     // this.routesObservable = this.routeSelectorService.getRoutes();
@@ -59,6 +63,7 @@ export class RouteSelectorComponent implements OnInit {
         this.departuresOut.emit(v)
         return;
       });
+      this.router.navigate(['/departures'])
   }
 
 }

@@ -1,0 +1,11 @@
+<mat-card class="form-container">
+  <app-route-selector
+    (departuresOut)="routeSelectorOut($event)"
+  ></app-route-selector>
+</mat-card>
+
+<mat-card class="table-container" *ngIf="appComponentDepartures">
+  <app-transit-info-graph
+    [departures]="appComponentDepartures.departures"
+  ></app-transit-info-graph>
+</mat-card>
