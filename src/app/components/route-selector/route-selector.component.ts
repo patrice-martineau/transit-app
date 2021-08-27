@@ -1,4 +1,4 @@
-import { Component, Inject, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Inject, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Observable } from 'rxjs';
 import { RouteSelectorService } from 'src/app/shared/services/route-selector.service';
 
@@ -17,6 +17,9 @@ export class RouteSelectorComponent implements OnInit {
   public selectedRoute: string;
   public selectedDirection: string;
   public selectedStop: string;
+
+  @Output()
+  departuresOut = new EventEmitter;
 
   constructor(private routeSelectorService: RouteSelectorService) { }
 
@@ -52,8 +55,8 @@ export class RouteSelectorComponent implements OnInit {
     console.log("changed stop selection", val.value);
       this.routeSelectorService.getDepartures(this.selectedRoute, this.selectedDirection, val.value)
       .subscribe(v => {
-        this.departures = v
-        console.log(v)
+        // this.departures = v 
+        this.departuresOut.emit(v)
         return;
       });
   }

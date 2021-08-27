@@ -24,4 +24,6 @@
   </button>
 </mat-toolbar>
 
-<app-route-selector></app-route-selector>
+<app-route-selector (departuresOut)=routeSelectorOut($event)></app-route-selector>
+<app-transit-info-graph *ngIf="appComponentDepartures" [departures]=appComponentDepartures.departures></app-transit-info-graph>
+<router-outlet></router-outlet>
