@@ -1,0 +1,18 @@
+.form-container {
+    display: flex;
+    max-width: 80%;
+    margin: 2% auto;
+  }
+
+.table-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+app-route-selector {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

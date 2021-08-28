@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from 'src/app/shared/material.module';
 
 import { ToolbarComponent } from './toolbar.component';
 
@@ -8,6 +11,11 @@ describe('ToolbarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [
+        BrowserAnimationsModule,
+        BrowserDynamicTestingModule,
+        MaterialModule
+      ],
       declarations: [ ToolbarComponent ]
     })
     .compileComponents();

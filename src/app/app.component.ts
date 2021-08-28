@@ -8,9 +8,4 @@ import { Component } from '@angular/core';
 export class AppComponent {
 	title = 'Transit App';
 
-	appComponentDepartures: any;
-
-	public routeSelectorOut(emittedValue: any): void {
-		this.appComponentDepartures = emittedValue;
-	}
 }
