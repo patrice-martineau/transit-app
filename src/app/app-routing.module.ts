@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ContainerComponent } from './components/container/container.component';
-import { RouteSelectorComponent } from './components/route-selector/route-selector.component';
 import { TransitInfoGraphComponent } from './components/transit-info-graph/transit-info-graph.component';
 
 const routes: Routes = [
