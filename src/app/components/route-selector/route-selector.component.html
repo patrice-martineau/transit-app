@@ -4,6 +4,7 @@
     id="route-select"
     [(value)]="selectedRoute"
     (selectionChange)="changedRouteSelection($event)"
+    aria-label="Select route from dropdown"
   >
     <mat-option *ngFor="let route of routes" [value]="route.route_id">
       {{ route.route_label }}
@@ -18,6 +19,7 @@
     [(value)]="selectedDirection"
     [disabled]="!selectedRoute"
     (selectionChange)="changedDirectionSelection($event)"
+    aria-label="Select direction from dropdown"
   >
     <mat-option
       *ngFor="let direction of directions"
@@ -35,6 +37,7 @@
     [(value)]="selectedStop"
     [disabled]="!(selectedDirection != null)"
     (selectionChange)="changedStopSelection($event)"
+    aria-label="Select stop from dropdown"
   >
     <mat-option *ngFor="let stop of stops" [value]="stop.place_code">
       {{ stop.description }}

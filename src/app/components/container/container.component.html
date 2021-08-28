@@ -1,15 +1,15 @@
 <mat-card class="form-container">
   <app-route-selector
-	(departuresOut)="routeSelectorOut($event)"
+    (departuresOut)="routeSelectorOut($event)"
   ></app-route-selector>
 </mat-card>
 
 <mat-card class="table-container" *ngIf="appComponentDepartures">
   <app-transit-info-graph
-	*ngIf="appComponentDepartures.departures; else loading"
-	[departures]="appComponentDepartures.departures"
+    *ngIf="appComponentDepartures.departures; else loading"
+    [departures]="appComponentDepartures.departures"
   ></app-transit-info-graph>
   <ng-template #loading>
-	<mat-spinner></mat-spinner>
+    <mat-spinner></mat-spinner>
   </ng-template>
 </mat-card>

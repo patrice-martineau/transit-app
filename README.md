@@ -18,3 +18,9 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
+## Development Assumptions
+* The user is accessing application on Chrome, Firefox, or Safari (not verified on other browsers)
+* The user is in CST (Central Standard Time Zone)
+* The user's screen size is greater than 259px wide.
+* The user speaks English, as that is the only available language for this application at this time.
+* The user has some familiarity with Metro Transit routes.
