@@ -12,12 +12,18 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { ContainerComponent } from './components/container/container.component';
 
 @NgModule({
-  declarations: [AppComponent, RouteSelectorComponent, TransitInfoGraphComponent, ToolbarComponent, ContainerComponent],
+  declarations: [
+    AppComponent,
+    ContainerComponent,
+    RouteSelectorComponent,
+    ToolbarComponent,
+    TransitInfoGraphComponent,
+  ],
   imports: [
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
-	HttpClientModule,
+    HttpClientModule,
     MaterialModule,
   ],
   providers: [],

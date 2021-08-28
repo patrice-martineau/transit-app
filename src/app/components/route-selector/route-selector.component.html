@@ -1,48 +1,43 @@
-<!-- <mat-card class="form-container"> -->
-  <mat-form-field appearance="fill">
-    <mat-label>Select Route</mat-label>
-    <mat-select
-      id="route-select"
-      [(value)]="selectedRoute"
-      (selectionChange)="changedRouteSelection($event)"
-    >
-      <mat-option *ngFor="let route of routes" [value]="route.route_id">
-        {{ route.route_label }}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+<mat-form-field appearance="fill">
+  <mat-label>Select Route</mat-label>
+  <mat-select
+    id="route-select"
+    [(value)]="selectedRoute"
+    (selectionChange)="changedRouteSelection($event)"
+  >
+    <mat-option *ngFor="let route of routes" [value]="route.route_id">
+      {{ route.route_label }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
 
-  <mat-form-field appearance="fill">
-    <mat-label>Select Direction</mat-label>
-    <mat-select
-      id="direction-select"
-      [(value)]="selectedDirection"
-      [disabled]="!selectedRoute"
-      (selectionChange)="changedDirectionSelection($event)"
+<mat-form-field appearance="fill">
+  <mat-label>Select Direction</mat-label>
+  <mat-select
+    id="direction-select"
+    [(value)]="selectedDirection"
+    [disabled]="!selectedRoute"
+    (selectionChange)="changedDirectionSelection($event)"
+  >
+    <mat-option
+      *ngFor="let direction of directions"
+      [value]="direction.direction_id"
     >
-      <mat-option
-        *ngFor="let direction of directions"
-        [value]="direction.direction_id"
-      >
-        {{ direction.direction_name }}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+      {{ direction.direction_name }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
 
-  <mat-form-field appearance="fill">
-    <mat-label>Select Stop</mat-label>
-    <mat-select
-      id="stop-select"
-      [(value)]="selectedStop"
-      [disabled]="!(selectedDirection != null)"
-      (selectionChange)="changedStopSelection($event)"
-    >
-      <mat-option 
-	  	*ngFor="let stop of stops"
-		[value]="stop.place_code"
-	  >
-        {{ stop.description }}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-<!-- </mat-card> -->
+<mat-form-field appearance="fill">
+  <mat-label>Select Stop</mat-label>
+  <mat-select
+    id="stop-select"
+    [(value)]="selectedStop"
+    [disabled]="!(selectedDirection != null)"
+    (selectionChange)="changedStopSelection($event)"
+  >
+    <mat-option *ngFor="let stop of stops" [value]="stop.place_code">
+      {{ stop.description }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

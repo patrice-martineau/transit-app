@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Inject, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { RouteSelectorService } from 'src/app/shared/services/route-selector.service';
 
 @Component({
@@ -28,7 +27,6 @@ export class RouteSelectorComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    // this.routesObservable = this.routeSelectorService.getRoutes();
 
     this.routeSelectorService.getRoutes()
     .subscribe(v => {
@@ -38,7 +36,6 @@ export class RouteSelectorComponent implements OnInit {
   }
 
   changedRouteSelection(val: any) {
-    console.log("changed route selection", val.value);
       this.routeSelectorService.getDirections(val.value)
       .subscribe(v => {
         this.directions = v
@@ -47,7 +44,6 @@ export class RouteSelectorComponent implements OnInit {
   }
 
   changedDirectionSelection(val: any) {
-    console.log("changed direction selection", val.value);
       this.routeSelectorService.getStops(this.selectedRoute, val.value)
       .subscribe(v => {
         this.stops = v
@@ -56,14 +52,13 @@ export class RouteSelectorComponent implements OnInit {
   }
 
   changedStopSelection(val: any) {
-    console.log("changed stop selection", val.value);
       this.routeSelectorService.getDepartures(this.selectedRoute, this.selectedDirection, val.value)
       .subscribe(v => {
         // this.departures = v 
         this.departuresOut.emit(v)
         return;
       });
-      this.router.navigate(['/departures'])
+      // this.router.navigate(['/departures'])
   }
 
 }
